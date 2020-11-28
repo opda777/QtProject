@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1034</width>
+    <height>669</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>-1</y>
+      <width>1031</width>
+      <height>611</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="Total_Layout"/>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="Total_menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1034</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuSiki">
+    <property name="title">
+     <string>Siki学院</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>首页</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>独立游戏</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuUnity">
+    <property name="title">
+     <string>Unity</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuUE4">
+    <property name="title">
+     <string>UE4</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuJavaEE">
+    <property name="title">
+     <string>JavaEE</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuPython">
+    <property name="title">
+     <string>Python人工智能</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>微信小程序</string>
+    </property>
+   </widget>
+   <addaction name="menuSiki"/>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menuUnity"/>
+   <addaction name="menuUE4"/>
+   <addaction name="menuJavaEE"/>
+   <addaction name="menuPython"/>
+   <addaction name="menu_3"/>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
