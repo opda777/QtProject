@@ -320,7 +320,7 @@ class Ui_Form(object):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.back_Button.setText(_translate("Form", "返回首页"))
-        self.courseName_label.setText(_translate("Form", "Unity2D官方案例"))
+        self.courseName_label.setText(_translate("Form", "Unity3D官方案例"))
         self.buyCourse_button.setText(_translate("Form", "购买课程"))
         self.label_3.setText(_translate("Form", "价格:"))
         self.coursePrice_label.setText(_translate("Form", "450元"))
