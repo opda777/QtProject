@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from PySide2 import QtWidgets,QtCore,QtGui
 import sys
+from database.user import UserTable
 
 
 
@@ -260,14 +261,14 @@ class log_Rig_Dialog(QtWidgets.QDialog):
         # 表单布局
         formLayout = QtWidgets.QFormLayout()
         self.rig_account = QtWidgets.QLineEdit()
-        self.rig_account.setPlaceholderText("填写你常用的邮箱或手机号码作为登录账号")
+        self.rig_account.setPlaceholderText("填写你常用的邮箱作为登录账号")
         self.rig_userName = QtWidgets.QLineEdit()
         self.rig_userName.setPlaceholderText("中、英文均可，最长18个英文或9个汉字")
         self.rig_password = QtWidgets.QLineEdit()
         self.rig_password.setPlaceholderText("5-20位英文、数字、符号，区分大小写")
-        self.register_button = QtWidgets.QPushButton("同一服务协议并注册")
+        self.register_button = QtWidgets.QPushButton("同意服务协议并注册")
         # 添加到表单layout
-        formLayout.addRow("手机/邮箱",self.rig_account)
+        formLayout.addRow("邮箱",self.rig_account)
         formLayout.addRow("用户名",self.rig_userName)
         formLayout.addRow("密码",self.rig_password)
         formLayout.addWidget(self.register_button)
@@ -283,11 +284,15 @@ class log_Rig_Dialog(QtWidgets.QDialog):
 
         # 进行登录判断
         # TODO
+        ut = UserTable()
+        log_user = ut.user_login(log_account, log_password)
 
-        if (True):
+
+        if (log_user):
             # 弹出登录成功窗口
             messageBox = QtWidgets.QMessageBox.information(self,"提示","登录成功！",QtWidgets.QMessageBox.Ok)
-            self.loginSinal.emit("伍嘉荣")
+            user_name = log_user.name
+            self.loginSinal.emit(user_name)
             self.close()
 
 
@@ -299,11 +304,12 @@ class log_Rig_Dialog(QtWidgets.QDialog):
 
         # 进行数据库判断，如果没有相同账号就存入数据库
         # TODO
-
-        if (True):
+        ut = UserTable()
+        reg_user = ut.user_reg(rigster_account, rigster_password, rigster_name)
+        if (reg_user):
             # 弹出注册成功窗口
             messageBox = QtWidgets.QMessageBox.information(self,"提示","注册成功！",QtWidgets.QMessageBox.Ok)
-            self.loginSinal.emit("go to login")
+            self.loginSinal.emit(reg_user)
         else:
             # 弹出注册失败窗口
             messageBox = QtWidgets.QMessageBox.information(self, "提示", "注册失败！", QtWidgets.QMessageBox.Ok)
